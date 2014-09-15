@@ -1,0 +1,16 @@
+{
+  "name": "dale-chall-formula",
+  "version": "0.0.1",
+  "description": "Formula to detect the grade level of text according to the (revised) Dale-Chall Readability Formula (1995)",
+  "license": "MIT",
+  "keywords": [
+    "dale",
+    "chall",
+    "readability",
+    "formula"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "repository": "wooorm/dale-chall-formula"
+}

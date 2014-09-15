@@ -1,0 +1,13 @@
+language: node_js
+script: npm run-script test-travis
+node_js:
+- '0.10'
+- '0.11'
+after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: tituswormer@gmail.com
+  api_key:
+    secure: WWzA589lbU/M4WEOwB3AEdZD1AcmXNVOuJo2Ps1sPm2San4X1R2qQpcJHdNl1WEUT1jcKb8Di5eSzjCXXmOws6LXKxsHAwTVi2jleoLX/KIuq8Uh8u3QwgRwg8v8jBa7tFbbMvZnpUN1i8y0IzxhmDXc2JxUnqH4kSlXMzgOe9E=
+  on:
+    repo: wooorm/dale-chall-formula
