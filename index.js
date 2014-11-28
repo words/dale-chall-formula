@@ -4,11 +4,17 @@
  * The constants as defined by the Dale--Chall Readability Formula.
  */
 
-var DIFFICULT_WORD_WEIGHT = 0.1579,
-    WORD_WEIGHT = 0.0496,
-    DIFFICULT_WORD_THRESHOLD = 0.05,
-    PERCENTAGE = 100,
-    ADJUSTMENT = 3.6365;
+var DIFFICULT_WORD_WEIGHT,
+    WORD_WEIGHT,
+    DIFFICULT_WORD_THRESHOLD,
+    PERCENTAGE,
+    ADJUSTMENT;
+
+DIFFICULT_WORD_WEIGHT = 0.1579;
+WORD_WEIGHT = 0.0496;
+DIFFICULT_WORD_THRESHOLD = 0.05;
+PERCENTAGE = 100;
+ADJUSTMENT = 3.6365;
 
 /**
  * Get the grade level of a given value according to the Dale--Chall
@@ -47,7 +53,9 @@ function daleChall(counts) {
  * The grade map associated with the scores.
  */
 
-var GRADE_MAP = {
+var GRADE_MAP;
+
+GRADE_MAP = {
     4: [0, 4],
     5: [5, 6],
     6: [7, 8],
