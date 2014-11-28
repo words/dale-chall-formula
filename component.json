@@ -9,8 +9,8 @@
     "readability",
     "formula"
   ],
+  "repository": "wooorm/dale-chall-formula",
   "scripts": [
     "index.js"
-  ],
-  "repository": "wooorm/dale-chall-formula"
+  ]
 }
