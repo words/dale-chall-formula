@@ -76,4 +76,4 @@ Given a score, returns the coresponding grade ranges
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
