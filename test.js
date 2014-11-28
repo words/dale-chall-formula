@@ -6,7 +6,7 @@ var daleChallFormula, assert, resultOne, resultTwo, resultThree, resultFour;
  * Module dependencies (daleChallFormula, assert).
  */
 
-daleChallFormula = require('..');
+daleChallFormula = require('./');
 assert = require('assert');
 
 /**
