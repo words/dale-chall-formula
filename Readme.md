@@ -1,4 +1,4 @@
-# dale-chall-formula [![Build Status](https://travis-ci.org/wooorm/dale-chall-formula.svg?branch=master)](https://travis-ci.org/wooorm/dale-chall-formula) [![Coverage Status](https://img.shields.io/coveralls/wooorm/dale-chall-formula.svg)](https://coveralls.io/r/wooorm/dale-chall-formula?branch=master)
+# dale-chall-formula [![Build Status](https://img.shields.io/travis/wooorm/dale-chall-formula.svg?style=flat)](https://travis-ci.org/wooorm/dale-chall-formula) [![Coverage Status](https://img.shields.io/coveralls/wooorm/dale-chall-formula.svg?style=flat)](https://coveralls.io/r/wooorm/dale-chall-formula?branch=master)
 
 Formula to detect the grade level of text according to the (revised) Dale–Chall Readability Formula.
 
