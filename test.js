@@ -1,16 +1,17 @@
 'use strict';
 
-var daleChallFormula, assert, resultOne, resultTwo, resultThree, resultFour;
-
 /**
- * Module dependencies (daleChallFormula, assert).
+ * Dependencies.
  */
+
+var daleChallFormula,
+    assert;
 
 daleChallFormula = require('./');
 assert = require('assert');
 
 /**
- * Assert, but up to 6 digits.
+ * Utilities.
  */
 
 function roundAssert(a, b) {
@@ -18,8 +19,13 @@ function roundAssert(a, b) {
 }
 
 /**
- * Unit tests.
+ * Tests.
  */
+
+var resultOne,
+    resultTwo,
+    resultThree,
+    resultFour;
 
 describe('daleChallFormula(wordCount, sentenceCount, difficultWordCount)',
     function () {
@@ -48,6 +54,7 @@ describe('daleChallFormula(wordCount, sentenceCount, difficultWordCount)',
             });
 
             assert(resultOne !== resultOne);
+
             roundAssert(resultTwo, 0.744);
             roundAssert(resultThree, 7.5385);
             roundAssert(resultFour, 11.4405);
@@ -64,18 +71,22 @@ describe('daleChallFormula.gradeLevel(score)', function () {
         var gradeLevel;
 
         gradeLevel = daleChallFormula.gradeLevel(resultOne);
+
         assert(
             gradeLevel[0] !== gradeLevel[0] &&
             gradeLevel[1] !== gradeLevel[1]
         );
 
         gradeLevel = daleChallFormula.gradeLevel(resultTwo);
+
         assert(gradeLevel[0] === 0 && gradeLevel[1] === 4);
 
         gradeLevel = daleChallFormula.gradeLevel(resultThree);
+
         assert(gradeLevel[0] === 9 && gradeLevel[1] === 10);
 
         gradeLevel = daleChallFormula.gradeLevel(resultFour);
+
         assert(gradeLevel[0] === 16 && gradeLevel[1] === Infinity);
     });
 });
