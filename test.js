@@ -31,20 +31,20 @@ describe('daleChallFormula(wordCount, sentenceCount, difficultWordCount)',
             resultOne = daleChallFormula();
 
             resultTwo = daleChallFormula({
-                'word' : 30,
-                'sentence' : 2
+                'word': 30,
+                'sentence': 2
             });
 
             resultThree = daleChallFormula({
-                'word' : 30,
-                'sentence' : 2,
-                'difficultWord' : 6
+                'word': 30,
+                'sentence': 2,
+                'difficultWord': 6
             });
 
             resultFour = daleChallFormula({
-                'word' : 30,
-                'sentence' : 1,
-                'difficultWord' : 12
+                'word': 30,
+                'sentence': 1,
+                'difficultWord': 12
             });
 
             assert(resultOne !== resultOne);
