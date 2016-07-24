@@ -1,24 +1,41 @@
-'use strict';
-
 /**
- * The constants as defined by the Dale--Chall Readability Formula.
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module dale-chall-formula
+ * @fileoverview Detect ease of reading according to the
+ *   the (revised) Dale-Chall Readability Formula (1995).
  */
 
-var DIFFICULT_WORD_WEIGHT,
-    WORD_WEIGHT,
-    DIFFICULT_WORD_THRESHOLD,
-    PERCENTAGE,
-    ADJUSTMENT;
+'use strict';
 
-DIFFICULT_WORD_WEIGHT = 0.1579;
-WORD_WEIGHT = 0.0496;
-DIFFICULT_WORD_THRESHOLD = 0.05;
-PERCENTAGE = 100;
-ADJUSTMENT = 3.6365;
+/* Expose. */
+module.exports = exports = daleChall;
+exports.gradeLevel = daleChallGradeLevel;
+
+/* The constants as defined by the Dale--Chall Readability Formula. */
+var DIFFICULT_WORD_WEIGHT = 0.1579;
+var WORD_WEIGHT = 0.0496;
+var DIFFICULT_WORD_THRESHOLD = 0.05;
+var PERCENTAGE = 100;
+var ADJUSTMENT = 3.6365;
+
+/* The grade map associated with the scores. */
+var GRADE_MAP = {
+  4: [0, 4],
+  5: [5, 6],
+  6: [7, 8],
+  7: [9, 10],
+  8: [11, 12],
+  9: [13, 15],
+  10: [16, Infinity],
+  NaN: [NaN, NaN]
+};
 
 /**
- * Get the grade level of a given value according to the Dale--Chall
- * Readability Formula. More information is available at WikiPedia:
+ * Get the grade level of a given value according to the
+ * Dale--Chall Readability Formula.  More information is
+ * available at WikiPedia:
  *
  *   http://en.wikipedia.org/wiki/Dale–Chall_readability_formula
  *
@@ -28,68 +45,37 @@ ADJUSTMENT = 3.6365;
  * @param {number} counts.difficultWord - Number of difficult words.
  * @return {number}
  */
-
 function daleChall(counts) {
-    var percentageOfDifficultWords,
-        score;
+  var percentageOfDifficultWords;
+  var score;
 
-    if (!counts || !counts.sentence || !counts.word) {
-        return NaN;
-    }
+  if (!counts || !counts.sentence || !counts.word) {
+    return NaN;
+  }
 
-    percentageOfDifficultWords = (counts.difficultWord || 0) / counts.word;
+  percentageOfDifficultWords = (counts.difficultWord || 0) / counts.word;
 
-    score = DIFFICULT_WORD_WEIGHT * percentageOfDifficultWords * PERCENTAGE +
-        WORD_WEIGHT * (counts.word / counts.sentence);
+  score = (DIFFICULT_WORD_WEIGHT * percentageOfDifficultWords * PERCENTAGE) +
+    (WORD_WEIGHT * counts.word / counts.sentence);
 
-    if (percentageOfDifficultWords > DIFFICULT_WORD_THRESHOLD) {
-        score += ADJUSTMENT;
-    }
+  if (percentageOfDifficultWords > DIFFICULT_WORD_THRESHOLD) {
+    score += ADJUSTMENT;
+  }
 
-    return score;
+  return score;
 }
-
-/**
- * The grade map associated with the scores.
- */
-
-var GRADE_MAP;
-
-GRADE_MAP = {
-    4: [0, 4],
-    5: [5, 6],
-    6: [7, 8],
-    7: [9, 10],
-    8: [11, 12],
-    9: [13, 15],
-    10: [16, Infinity],
-    NaN: [NaN, NaN]
-};
 
 /**
  * Simple mapping between a dale-chall score and a U.S. grade level.
  */
-
 function daleChallGradeLevel(score) {
-    score = Math.floor(score);
+  score = Math.floor(score);
 
-    if (score < 5) {
-        score = 4;
-    } else if (score > 9) {
-        score = 10;
-    }
+  if (score < 5) {
+    score = 4;
+  } else if (score > 9) {
+    score = 10;
+  }
 
-    return GRADE_MAP[score].concat();
+  return GRADE_MAP[score].concat();
 }
-
-/**
- * Export `daleChallGradeLevel`.
- */
-
-daleChall.gradeLevel = daleChallGradeLevel;
-
-/**
- * Export `daleChall`.
- */
-
-module.exports = daleChall;

@@ -1,92 +1,59 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module dale-chall-formula
+ * @fileoverview Test suite for `dale-chall-formula`.
+ */
+
 'use strict';
 
-/**
- * Dependencies.
- */
+/* Dependencies. */
+var test = require('tape');
+var nan = require('is-nan');
+var daleChall = require('./');
 
-var daleChallFormula,
-    assert;
+/* Results. */
+var one = daleChall();
+var two = daleChall({word: 30, sentence: 2});
+var three = daleChall({word: 30, sentence: 2, difficultWord: 6});
+var four = daleChall({word: 30, sentence: 1, difficultWord: 12});
 
-daleChallFormula = require('./');
-assert = require('assert');
+/* Formula. */
+test('daleChall', function (t) {
+  t.ok(nan(one), 'NaN when an invalid value is given');
+  t.equal(round(two), 0.744);
+  t.equal(round(three), 7.5385);
+  t.equal(round(four), 11.4405);
 
-/**
- * Utilities.
- */
-
-function roundAssert(a, b) {
-    assert(Math.round(a * 1000000) === Math.round(b * 1000000));
-}
-
-/**
- * Tests.
- */
-
-var resultOne,
-    resultTwo,
-    resultThree,
-    resultFour;
-
-describe('daleChallFormula(wordCount, sentenceCount, difficultWordCount)',
-    function () {
-        it('should be of type `function`', function () {
-            assert(typeof daleChallFormula === 'function');
-        });
-
-        it('should work', function () {
-            resultOne = daleChallFormula();
-
-            resultTwo = daleChallFormula({
-                'word': 30,
-                'sentence': 2
-            });
-
-            resultThree = daleChallFormula({
-                'word': 30,
-                'sentence': 2,
-                'difficultWord': 6
-            });
-
-            resultFour = daleChallFormula({
-                'word': 30,
-                'sentence': 1,
-                'difficultWord': 12
-            });
-
-            assert(resultOne !== resultOne);
-
-            roundAssert(resultTwo, 0.744);
-            roundAssert(resultThree, 7.5385);
-            roundAssert(resultFour, 11.4405);
-        });
-    }
-);
-
-describe('daleChallFormula.gradeLevel(score)', function () {
-    it('should be of type `function`', function () {
-        assert(typeof daleChallFormula.gradeLevel === 'function');
-    });
-
-    it('should work', function () {
-        var gradeLevel;
-
-        gradeLevel = daleChallFormula.gradeLevel(resultOne);
-
-        assert(
-            gradeLevel[0] !== gradeLevel[0] &&
-            gradeLevel[1] !== gradeLevel[1]
-        );
-
-        gradeLevel = daleChallFormula.gradeLevel(resultTwo);
-
-        assert(gradeLevel[0] === 0 && gradeLevel[1] === 4);
-
-        gradeLevel = daleChallFormula.gradeLevel(resultThree);
-
-        assert(gradeLevel[0] === 9 && gradeLevel[1] === 10);
-
-        gradeLevel = daleChallFormula.gradeLevel(resultFour);
-
-        assert(gradeLevel[0] === 16 && gradeLevel[1] === Infinity);
-    });
+  t.end();
 });
+
+/* Grade-level. */
+test('daleChallFormula.gradeLevel(score)', function (t) {
+  var res = daleChall.gradeLevel(one);
+
+  t.ok(nan(res[0]), 'NaN when an invalid value is given');
+  t.ok(nan(res[1]), 'NaN when an invalid value is given');
+
+  t.deepEqual(
+    daleChall.gradeLevel(two),
+    [0, 4]
+  );
+
+  t.deepEqual(
+    daleChall.gradeLevel(three),
+    [9, 10]
+  );
+
+  t.deepEqual(
+    daleChall.gradeLevel(four),
+    [16, Infinity]
+  );
+
+  t.end();
+});
+
+function round(val) {
+  return Math.round(val * 1e6) / 1e6;
+}

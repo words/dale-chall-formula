@@ -1,13 +1,26 @@
 language: node_js
-script: npm run-script test-travis
+sudo: false
 node_js:
-- '0.10'
 - '0.11'
-after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+- '0.12'
+- '4.0'
+- '5.0'
+- '6.0'
+after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: npm
-  email: tituswormer@gmail.com
-  api_key:
-    secure: WWzA589lbU/M4WEOwB3AEdZD1AcmXNVOuJo2Ps1sPm2San4X1R2qQpcJHdNl1WEUT1jcKb8Di5eSzjCXXmOws6LXKxsHAwTVi2jleoLX/KIuq8Uh8u3QwgRwg8v8jBa7tFbbMvZnpUN1i8y0IzxhmDXc2JxUnqH4kSlXMzgOe9E=
-  on:
-    repo: wooorm/dale-chall-formula
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: AFM0FW4PURAPdMNKTIGzNdkiEyrDWr4WDyvYMLN6tZniSOB+mXaz95LdkTx6Dql6zcR68JXnAjVFqaiey29qp/RZwZUJKUCsR13Z555cKh6rmWNOoOFgnbQScuoZnpnJR6Id0NmVKAH5mIAsDu4SYCpOhDTVQ9ZMC7koFdTmgF0=
+    on:
+      tags: true
+      node: '5.0'
+  - provider: releases
+    api_key:
+      secure: bJvFZm0qDqS4BoJMApivv+iTeXsVTMcSkOUhYeyQKLR23zauf3QQUljroo/GDqZDixP6ZjfTBq6WEetyFFMZAWo+zy5OlNZWkAYZmcjosYkix6JioIvogqj3zurgc2O4wMM3FXCObG5w/D3sgBnrQq5LMFIBhpktLVW6pAIiXJE=
+    file:
+      - "dale-chall-formula.js"
+      - "dale-chall-formula.min.js"
+    on:
+      tags: true
+      node: '6.0'
