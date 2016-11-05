@@ -2,7 +2,6 @@
 *.log
 .nyc_output/
 coverage/
-data/
 node_modules/
 dale-chall-formula.js
 dale-chall-formula.min.js
