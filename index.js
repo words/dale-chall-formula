@@ -1,12 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module dale-chall-formula
- * @fileoverview Detect ease of reading according to the
- *   the (revised) Dale-Chall Readability Formula (1995).
- */
-
 'use strict';
 
 /* Expose. */
@@ -65,9 +56,7 @@ function daleChall(counts) {
   return score;
 }
 
-/**
- * Simple mapping between a dale-chall score and a U.S. grade level.
- */
+/* mapping between a dale-chall score and a U.S. grade level. */
 function daleChallGradeLevel(score) {
   score = Math.floor(score);
 

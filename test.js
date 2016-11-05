@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module dale-chall-formula
- * @fileoverview Test suite for `dale-chall-formula`.
- */
-
 'use strict';
 
 /* Dependencies. */
