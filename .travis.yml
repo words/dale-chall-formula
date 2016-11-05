@@ -2,9 +2,8 @@ language: node_js
 sudo: false
 node_js:
 - '4.0'
-- '5.0'
-- '6.0'
-after_success: bash <(curl -s https://codecov.io/bash)
+- '7.0'
+after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: npm
     email: tituswormer@gmail.com
@@ -12,7 +11,7 @@ deploy:
       secure: AFM0FW4PURAPdMNKTIGzNdkiEyrDWr4WDyvYMLN6tZniSOB+mXaz95LdkTx6Dql6zcR68JXnAjVFqaiey29qp/RZwZUJKUCsR13Z555cKh6rmWNOoOFgnbQScuoZnpnJR6Id0NmVKAH5mIAsDu4SYCpOhDTVQ9ZMC7koFdTmgF0=
     on:
       tags: true
-      node: '5.0'
+      node: '4.0'
   - provider: releases
     api_key:
       secure: bJvFZm0qDqS4BoJMApivv+iTeXsVTMcSkOUhYeyQKLR23zauf3QQUljroo/GDqZDixP6ZjfTBq6WEetyFFMZAWo+zy5OlNZWkAYZmcjosYkix6JioIvogqj3zurgc2O4wMM3FXCObG5w/D3sgBnrQq5LMFIBhpktLVW6pAIiXJE=
@@ -21,4 +20,4 @@ deploy:
       - "dale-chall-formula.min.js"
     on:
       tags: true
-      node: '6.0'
+      node: '7.0'
