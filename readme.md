@@ -7,7 +7,7 @@ See [dale-chall][list] for a list of words which count as “familiar”.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install dale-chall-formula
@@ -61,19 +61,19 @@ Given a score, returns the corresponding grade ranges
 ## Related
 
 *   [`automated-readability`](https://github.com/wooorm/automated-readability)
-    — Uses character count instead of error-prone syllable parser;
+    — Uses character count instead of error-prone syllable parser
 *   [`coleman-liau`](https://github.com/wooorm/coleman-liau)
-    — Uses letter count instead of an error-prone syllable parser;
+    — Uses letter count instead of an error-prone syllable parser
 *   [`flesch`](https://github.com/wooorm/flesch)
-    — Uses syllable count;
+    — Uses syllable count
 *   [`flesch-kincaid`](https://github.com/wooorm/flesch-kincaid)
-    — Like `flesch-formula`; returns U.S. grade levels;
+    — Like `flesch-formula`, returns U.S. grade levels
 *   [`gunning-fog`](https://github.com/wooorm/gunning-fog)
-    — Uses syllable count; needs POS-tagging and NER;
+    — Uses syllable count, needs POS-tagging and NER
 *   [`smog-formula`](https://github.com/wooorm/smog-formula)
-    — Like `gunning-fog-index`; without needing advanced NLP;
+    — Like `gunning-fog-index`, without needing advanced NLP
 *   [`spache-formula`](https://github.com/wooorm/spache-formula)
-    — Uses a dictionary; suited for lower reading levels.
+    — Uses a dictionary, suited for lower reading levels
 
 ## License
 
@@ -89,7 +89,7 @@ Given a score, returns the corresponding grade ranges
 
 [codecov]: https://codecov.io/github/wooorm/dale-chall-formula
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
