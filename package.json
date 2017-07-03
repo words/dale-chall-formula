@@ -1,6 +1,6 @@
 {
   "name": "dale-chall-formula",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Formula to detect the grade level of text according to the (revised) Dale-Chall Readability Formula (1995)",
   "license": "MIT",
   "keywords": [
