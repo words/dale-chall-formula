@@ -1,17 +1,15 @@
 'use strict';
 
-/* Expose. */
 module.exports = daleChall;
 daleChall.gradeLevel = daleChallGradeLevel;
 
-/* The constants as defined by the Dale--Chall Readability Formula. */
 var DIFFICULT_WORD_WEIGHT = 0.1579;
 var WORD_WEIGHT = 0.0496;
 var DIFFICULT_WORD_THRESHOLD = 0.05;
 var PERCENTAGE = 100;
 var ADJUSTMENT = 3.6365;
 
-/* The grade map associated with the scores. */
+/* Grade map associated with the scores. */
 var GRADE_MAP = {
   4: [0, 4],
   5: [5, 6],
@@ -23,19 +21,6 @@ var GRADE_MAP = {
   NaN: [NaN, NaN]
 };
 
-/**
- * Get the grade level of a given value according to the
- * Dale--Chall Readability Formula.  More information is
- * available at WikiPedia:
- *
- *   http://en.wikipedia.org/wiki/Dale–Chall_readability_formula
- *
- * @param {Object} counts
- * @param {number} counts.word - Number of words.
- * @param {number} counts.sentence - Number of sentences.
- * @param {number} counts.difficultWord - Number of difficult words.
- * @return {number}
- */
 function daleChall(counts) {
   var percentageOfDifficultWords;
   var score;

@@ -1,17 +1,14 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var nan = require('is-nan');
 var daleChall = require('./');
 
-/* Results. */
 var one = daleChall();
 var two = daleChall({word: 30, sentence: 2});
 var three = daleChall({word: 30, sentence: 2, difficultWord: 6});
 var four = daleChall({word: 30, sentence: 1, difficultWord: 12});
 
-/* Formula. */
 test('daleChall', function (t) {
   t.ok(nan(one), 'NaN when an invalid value is given');
   t.equal(round(two), 0.744);
