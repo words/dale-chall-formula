@@ -1,8 +1,8 @@
 'use strict';
 
 /* Expose. */
-module.exports = exports = daleChall;
-exports.gradeLevel = daleChallGradeLevel;
+module.exports = daleChall;
+daleChall.gradeLevel = daleChallGradeLevel;
 
 /* The constants as defined by the Dale--Chall Readability Formula. */
 var DIFFICULT_WORD_WEIGHT = 0.1579;
@@ -56,7 +56,7 @@ function daleChall(counts) {
   return score;
 }
 
-/* mapping between a dale-chall score and a U.S. grade level. */
+/* Mapping between a dale-chall score and a U.S. grade level. */
 function daleChallGradeLevel(score) {
   score = Math.floor(score);
 
