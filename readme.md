@@ -81,13 +81,13 @@ Given a score, returns the corresponding grade ranges
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/dale-chall-formula.svg
+[travis-badge]: https://img.shields.io/travis/words/dale-chall-formula.svg
 
-[travis]: https://travis-ci.org/wooorm/dale-chall-formula
+[travis]: https://travis-ci.org/words/dale-chall-formula
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/dale-chall-formula.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/words/dale-chall-formula.svg
 
-[codecov]: https://codecov.io/github/wooorm/dale-chall-formula
+[codecov]: https://codecov.io/github/words/dale-chall-formula
 
 [npm]: https://docs.npmjs.com/cli/install
 
