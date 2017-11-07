@@ -60,19 +60,19 @@ Given a score, returns the corresponding grade ranges
 
 ## Related
 
-*   [`automated-readability`](https://github.com/wooorm/automated-readability)
+*   [`automated-readability`](https://github.com/words/automated-readability)
     — Uses character count instead of error-prone syllable parser
-*   [`coleman-liau`](https://github.com/wooorm/coleman-liau)
+*   [`coleman-liau`](https://github.com/words/coleman-liau)
     — Uses letter count instead of an error-prone syllable parser
-*   [`flesch`](https://github.com/wooorm/flesch)
+*   [`flesch`](https://github.com/words/flesch)
     — Uses syllable count
-*   [`flesch-kincaid`](https://github.com/wooorm/flesch-kincaid)
+*   [`flesch-kincaid`](https://github.com/words/flesch-kincaid)
     — Like `flesch-formula`, returns U.S. grade levels
-*   [`gunning-fog`](https://github.com/wooorm/gunning-fog)
+*   [`gunning-fog`](https://github.com/words/gunning-fog)
     — Uses syllable count, needs POS-tagging and NER
-*   [`smog-formula`](https://github.com/wooorm/smog-formula)
+*   [`smog-formula`](https://github.com/words/smog-formula)
     — Like `gunning-fog-index`, without needing advanced NLP
-*   [`spache-formula`](https://github.com/wooorm/spache-formula)
+*   [`spache-formula`](https://github.com/words/spache-formula)
     — Uses a dictionary, suited for lower reading levels
 
 ## License
@@ -97,4 +97,4 @@ Given a score, returns the corresponding grade ranges
 
 [formula]: http://en.wikipedia.org/wiki/Dale–Chall_readability_formula
 
-[list]: https://github.com/wooorm/dale-chall
+[list]: https://github.com/words/dale-chall
