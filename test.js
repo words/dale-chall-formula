@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var nan = require('is-nan');
-var daleChall = require('./');
+var daleChall = require('.');
 
 var one = daleChall();
 var two = daleChall({word: 30, sentence: 2});
