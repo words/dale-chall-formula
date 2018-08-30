@@ -21,18 +21,18 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "^16.0.0",
-    "esmangle": "^1.0.1",
     "is-nan": "^1.2.1",
     "nyc": "^13.0.0",
     "remark-cli": "^5.0.0",
     "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.0.0",
+    "tinyify": "^2.4.3",
     "xo": "^0.22.0"
   },
   "scripts": {
     "build-md": "remark . -qfo",
-    "build-bundle": "browserify index.js --bare -s daleChallFormula > dale-chall-formula.js",
-    "build-mangle": "esmangle dale-chall-formula.js > dale-chall-formula.min.js",
+    "build-bundle": "browserify . -s daleChallFormula -o dale-chall-formula.js",
+    "build-mangle": "browserify . -s daleChallFormula -p tinyify -o dale-chall-formula.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
     "test-api": "node test",
