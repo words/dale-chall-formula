@@ -16,24 +16,15 @@ npm install dale-chall-formula
 ## Usage
 
 ```js
-var daleChallFormula = require('dale-chall-formula');
+var daleChallFormula = require('dale-chall-formula')
 
-daleChallFormula({
-  word: 30,
-  sentence: 2,
-  difficultWord: 6
-});
-// 4.41208
+daleChallFormula({word: 30, sentence: 2, difficultWord: 6}) // => 4.41208
 
-daleChallFormula({
-  word: 30,
-  sentence: 2
-});
-// 0.744
+daleChallFormula({word: 30, sentence: 2}) // => 0.744
 
-daleChallFormula() // NaN
+daleChallFormula() // => NaN
 
-daleChallFormula.gradeLevel(daleChallFormula(30, 2, 6)) // [9, 10]
+daleChallFormula.gradeLevel(daleChallFormula(30, 2, 6)) // => [9, 10]
 ```
 
 ## API
