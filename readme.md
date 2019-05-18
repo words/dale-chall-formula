@@ -1,4 +1,9 @@
-# dale-chall-formula [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# dale-chall-formula
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Formula to detect the grade level of text according to the
 [(revised) Dale–Chall Readability Formula][formula].
@@ -72,13 +77,21 @@ Given a score, returns the corresponding grade ranges
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/words/dale-chall-formula.svg
+[build-badge]: https://img.shields.io/travis/words/dale-chall-formula.svg
 
-[travis]: https://travis-ci.org/words/dale-chall-formula
+[build]: https://travis-ci.org/words/dale-chall-formula
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/words/dale-chall-formula.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/words/dale-chall-formula.svg
 
-[codecov]: https://codecov.io/github/words/dale-chall-formula
+[coverage]: https://codecov.io/github/words/dale-chall-formula
+
+[downloads-badge]: https://img.shields.io/npm/dm/dale-chall-formula.svg
+
+[downloads]: https://www.npmjs.com/package/dale-chall-formula
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/dale-chall-formula.svg
+
+[size]: https://bundlephobia.com/result?p=dale-chall-formula
 
 [npm]: https://docs.npmjs.com/cli/install
 
