@@ -1,8 +1,8 @@
 language: node_js
 sudo: false
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
@@ -10,7 +10,7 @@ deploy:
   api_key:
     secure: bJvFZm0qDqS4BoJMApivv+iTeXsVTMcSkOUhYeyQKLR23zauf3QQUljroo/GDqZDixP6ZjfTBq6WEetyFFMZAWo+zy5OlNZWkAYZmcjosYkix6JioIvogqj3zurgc2O4wMM3FXCObG5w/D3sgBnrQq5LMFIBhpktLVW6pAIiXJE=
   file:
-    - "dale-chall-formula.js"
-    - "dale-chall-formula.min.js"
+    - 'dale-chall-formula.js'
+    - 'dale-chall-formula.min.js'
   on:
     tags: true
