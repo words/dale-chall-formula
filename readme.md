@@ -5,8 +5,8 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-Formula to detect the grade level of text according to the
-[(revised) Dale–Chall Readability Formula][formula].
+Formula to detect the grade level of text according to the [(revised) Dale–Chall
+Readability Formula][formula].
 
 See [dale-chall][list] for a list of words which count as “familiar”.
 
@@ -36,9 +36,9 @@ daleChallFormula.gradeLevel(daleChallFormula(30, 2, 6)) // => [9, 10]
 
 ### `daleChallFormula(counts)`
 
-Given the number of words (`word`), the number of sentences (`sentence`),
-and the number of unique unfamiliar words in a document (`difficultWord`),
-returns the score associated with the document.
+Given the number of words (`word`), the number of sentences (`sentence`), and
+the number of unique unfamiliar words in a document (`difficultWord`), returns
+the score associated with the document.
 
 ### `daleChallFormula.gradeLevel(score)`
 
