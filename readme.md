@@ -84,8 +84,8 @@ Given a score, returns the corresponding grade ranges
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
-[formula]: http://en.wikipedia.org/wiki/Dale–Chall_readability_formula
+[formula]: https://en.wikipedia.org/wiki/Dale–Chall_readability_formula
 
 [list]: https://github.com/words/dale-chall
