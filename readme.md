@@ -6,19 +6,19 @@
 [![Size][size-badge]][size]
 
 Formula to detect the grade level of text according to the [(revised) Dale–Chall
-Readability Formula][formula].
+readability formula][formula].
 
-See [dale-chall][list] for a list of words which count as “familiar”.
+See [`dale-chall`][list] for a list of words which count as “familiar”.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install dale-chall-formula
 ```
 
-## Usage
+## Use
 
 ```js
 var daleChallFormula = require('dale-chall-formula')
