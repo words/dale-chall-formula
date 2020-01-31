@@ -11,6 +11,10 @@
   ],
   "repository": "words/dale-chall-formula",
   "bugs": "https://github.com/words/dale-chall-formula/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
   "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
