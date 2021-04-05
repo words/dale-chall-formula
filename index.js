@@ -16,8 +16,23 @@ var gradeMap = {
   NaN: [Number.NaN, Number.NaN]
 }
 
+/**
+ * @typedef {Object.<string, number>} DaleChallFormulaCounts
+ * @property {number} sentence
+ * @property {number} word
+ * @property {number} difficultWord
+ */
+
+/**
+ * Given the number of words (`word`), the number of sentences (`sentence`), and the number of unique unfamiliar words in a document (`difficultWord`), returns the score associated with the document.
+ *
+ * @param {DaleChallFormulaCounts} counts
+ * @returns {number}
+ */
 export function daleChallFormula(counts) {
+  /** @type {number} */
   var percentageOfDifficultWords
+  /** @type {number} */
   var score
 
   if (!counts || !counts.sentence || !counts.word) {
@@ -37,15 +52,22 @@ export function daleChallFormula(counts) {
   return score
 }
 
-// Mapping between a dale-chall score and a U.S. grade level.
+/**
+ * Mapping between a dale-chall score and a U.S. grade level.
+ *
+ * @param {number} score
+ * @returns {[number, number]}
+ */
 export function daleChallGradeLevel(score) {
-  score = Math.floor(score)
+  var floored = Math.floor(score)
 
-  if (score < 5) {
-    score = 4
-  } else if (score > 9) {
-    score = 10
+  if (floored < 5) {
+    floored = 4
+  } else if (floored > 9) {
+    floored = 10
   }
 
-  return gradeMap[score].concat()
+  // eslint-ignore-next-line capitalized-comments
+  // type-coverage:ignore-next-line
+  return gradeMap[floored].concat()
 }

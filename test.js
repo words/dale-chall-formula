@@ -2,6 +2,7 @@ import test from 'tape'
 import {daleChallFormula, daleChallGradeLevel} from './index.js'
 
 test('daleChallFormula', function (t) {
+  // @ts-ignore runtime
   t.ok(Number.isNaN(daleChallFormula()), 'NaN when an invalid value is given')
   t.equal(round(daleChallFormula({word: 30, sentence: 2})), 0.744)
   t.equal(
@@ -17,9 +18,16 @@ test('daleChallFormula', function (t) {
 
 // Grade-level.
 test('daleChallGradeLevel(score)', function (t) {
-  var level = daleChallGradeLevel(daleChallFormula())
-  t.ok(Number.isNaN(level[0]), 'NaN when an invalid value is given')
-  t.ok(Number.isNaN(level[1]), 'NaN when an invalid value is given')
+  t.ok(
+    // @ts-ignore runtime
+    Number.isNaN(daleChallGradeLevel(daleChallFormula())[0]),
+    'NaN when an invalid value is given'
+  )
+  t.ok(
+    // @ts-ignore runtime
+    Number.isNaN(daleChallGradeLevel(daleChallFormula())[1]),
+    'NaN when an invalid value is given'
+  )
   t.deepEqual(daleChallGradeLevel(daleChallFormula({word: 30, sentence: 2})), [
     0,
     4
@@ -39,6 +47,10 @@ test('daleChallGradeLevel(score)', function (t) {
   t.end()
 })
 
+/**
+ * @param {number} value
+ * @returns {number}
+ */
 function round(value) {
   return Math.round(value * 1e6) / 1e6
 }
