@@ -17,8 +17,8 @@ var gradeMap = {
   7: [9, 10],
   8: [11, 12],
   9: [13, 15],
-  10: [16, Infinity],
-  NaN: [NaN, NaN]
+  10: [16, Number.POSITIVE_INFINITY],
+  NaN: [Number.NaN, Number.NaN]
 }
 
 function daleChall(counts) {
@@ -26,7 +26,7 @@ function daleChall(counts) {
   var score
 
   if (!counts || !counts.sentence || !counts.word) {
-    return NaN
+    return Number.NaN
   }
 
   percentageOfDifficultWords = (counts.difficultWord || 0) / counts.word
