@@ -77,9 +77,9 @@ Given a score, returns the corresponding grade ranges
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/words/dale-chall-formula.svg
+[build-badge]: https://github.com/words/dale-chall-formula/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/words/dale-chall-formula
+[build]: https://github.com/words/dale-chall-formula/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/words/dale-chall-formula.svg
 
