@@ -1,8 +1,3 @@
-'use strict'
-
-module.exports = daleChall
-daleChall.gradeLevel = daleChallGradeLevel
-
 var difficultWordWeight = 0.1579
 var wordWeight = 0.0496
 var difficultWordThreshold = 0.05
@@ -21,7 +16,7 @@ var gradeMap = {
   NaN: [Number.NaN, Number.NaN]
 }
 
-function daleChall(counts) {
+export function daleChallFormula(counts) {
   var percentageOfDifficultWords
   var score
 
@@ -43,7 +38,7 @@ function daleChall(counts) {
 }
 
 // Mapping between a dale-chall score and a U.S. grade level.
-function daleChallGradeLevel(score) {
+export function daleChallGradeLevel(score) {
   score = Math.floor(score)
 
   if (score < 5) {

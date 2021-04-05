@@ -12,6 +12,9 @@ See [`dale-chall`][list] for a list of words which count as “familiar”.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,7 +24,7 @@ npm install dale-chall-formula
 ## Use
 
 ```js
-var daleChallFormula = require('dale-chall-formula')
+import {daleChallFormula, daleChallGradeLevel} from 'dale-chall-formula'
 
 daleChallFormula({word: 30, sentence: 2, difficultWord: 6}) // => 4.41208
 
@@ -29,10 +32,14 @@ daleChallFormula({word: 30, sentence: 2}) // => 0.744
 
 daleChallFormula() // => NaN
 
-daleChallFormula.gradeLevel(daleChallFormula(30, 2, 6)) // => [9, 10]
+daleChallGradeLevel(daleChallFormula(30, 2, 6)) // => [9, 10]
 ```
 
 ## API
+
+This package exports the following identifiers: `daleChallFormula`,
+`daleChallGradeLevel`.
+There is no default export.
 
 ### `daleChallFormula(counts)`
 
@@ -40,7 +47,7 @@ Given the number of words (`word`), the number of sentences (`sentence`), and
 the number of unique unfamiliar words in a document (`difficultWord`), returns
 the score associated with the document.
 
-### `daleChallFormula.gradeLevel(score)`
+### `daleChallGradeLevel(score)`
 
 Given a score, returns the corresponding grade ranges
 
