@@ -1,3 +1,19 @@
+/**
+ * @typedef Counts
+ *   Counts from input document.
+ * @property {number} sentence
+ *   Number of sentences.
+ * @property {number} word
+ *   Number of words.
+ * @property {number} difficultWord
+ *   Number of difficult words.
+ */
+
+/**
+ * @typedef {Counts} DaleChallFormulaCounts
+ *   Deprecated: please use the `Counts` type instead.
+ */
+
 const difficultWordWeight = 0.1579
 const wordWeight = 0.0496
 const difficultWordThreshold = 0.05
@@ -18,17 +34,15 @@ const gradeMap = {
 }
 
 /**
- * @typedef {Object.<string, number>} DaleChallFormulaCounts
- * @property {number} sentence
- * @property {number} word
- * @property {number} difficultWord
- */
-
-/**
- * Given the number of words (`word`), the number of sentences (`sentence`), and the number of unique unfamiliar words in a document (`difficultWord`), returns the score associated with the document.
+ * Given the number of words (`word`), the number of sentences (`sentence`),
+ * and the number of unique unfamiliar words in a document (`difficultWord`),
+ * returns the score associated with the document.
  *
- * @param {DaleChallFormulaCounts} counts
- * @returns {number}
+ * @param {Counts} counts
+ *   Counts from input document.
+ * @return {number}
+ *   Number representing ease of reading.
+ *   Pass it to `daleChallGradeLevel` to get grade levels.
  */
 export function daleChallFormula(counts) {
   if (!counts || !counts.sentence || !counts.word) {
@@ -48,10 +62,12 @@ export function daleChallFormula(counts) {
 }
 
 /**
- * Mapping between a dale-chall score and a U.S. grade level.
+ * Map between a dale–chall score and a U.S. grade level.
  *
  * @param {number} score
+ *   Number representing ease of reading.
  * @returns {[number, number]}
+ *   Grade levels.
  */
 export function daleChallGradeLevel(score) {
   let floored = Math.floor(score)
