@@ -5,7 +5,7 @@
  *   Number of sentences.
  * @property {number} word
  *   Number of words.
- * @property {number} difficultWord
+ * @property {number} [difficultWord=0]
  *   Number of difficult words.
  */
 
