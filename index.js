@@ -41,7 +41,8 @@ const gradeMap = {
  * @param {Counts} counts
  *   Counts from input document.
  * @return {number}
- *   Number representing ease of reading.
+ *   Score representing ease of reading.
+ *
  *   Pass it to `daleChallGradeLevel` to get grade levels.
  */
 export function daleChallFormula(counts) {
@@ -62,12 +63,22 @@ export function daleChallFormula(counts) {
 }
 
 /**
- * Map between a dale–chall score and a U.S. grade level.
+ * Turn a dale–chall score into U.S. grade levels.
  *
  * @param {number} score
- *   Number representing ease of reading.
+ *   Score representing ease of reading.
  * @returns {[number, number]}
  *   Grade levels.
+ *
+ *   |        Score | Corresponding grade level               | Return value     |
+ *   | -----------: | --------------------------------------- | ---------------- |
+ *   |  Less than 5 | Grade 4 and lower                       | `[0, 4]`         |
+ *   |  Less than 6 | Grades 5 and 6                          | `[5, 6]`         |
+ *   |  Less than 7 | Grades 7 and 8                          | `[7, 8]`         |
+ *   |  Less than 8 | Grades 9 and 10                         | `[9, 10]`        |
+ *   |  Less than 9 | Grades 11 and 12                        | `[11, 12]`       |
+ *   | Less than 10 | Grades 13 and 15 (College)              | `[13, 15]`       |
+ *   |       Higher | Grades 16 and higher (College Graduate) | `[16, Infinity]` |
  */
 export function daleChallGradeLevel(score) {
   let floored = Math.floor(score)
