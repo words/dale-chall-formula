@@ -1,11 +1,11 @@
-var difficultWordWeight = 0.1579
-var wordWeight = 0.0496
-var difficultWordThreshold = 0.05
-var percentage = 100
-var adjustment = 3.6365
+const difficultWordWeight = 0.1579
+const wordWeight = 0.0496
+const difficultWordThreshold = 0.05
+const percentage = 100
+const adjustment = 3.6365
 
 // Grade map associated with the scores.
-var gradeMap = {
+const gradeMap = {
   4: [0, 4],
   5: [5, 6],
   6: [7, 8],
@@ -30,18 +30,12 @@ var gradeMap = {
  * @returns {number}
  */
 export function daleChallFormula(counts) {
-  /** @type {number} */
-  var percentageOfDifficultWords
-  /** @type {number} */
-  var score
-
   if (!counts || !counts.sentence || !counts.word) {
     return Number.NaN
   }
 
-  percentageOfDifficultWords = (counts.difficultWord || 0) / counts.word
-
-  score =
+  const percentageOfDifficultWords = (counts.difficultWord || 0) / counts.word
+  let score =
     difficultWordWeight * percentageOfDifficultWords * percentage +
     (wordWeight * counts.word) / counts.sentence
 
@@ -59,7 +53,7 @@ export function daleChallFormula(counts) {
  * @returns {[number, number]}
  */
 export function daleChallGradeLevel(score) {
-  var floored = Math.floor(score)
+  let floored = Math.floor(score)
 
   if (floored < 5) {
     floored = 4

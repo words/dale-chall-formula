@@ -28,10 +28,10 @@ test('daleChallGradeLevel(score)', function (t) {
     Number.isNaN(daleChallGradeLevel(daleChallFormula())[1]),
     'NaN when an invalid value is given'
   )
-  t.deepEqual(daleChallGradeLevel(daleChallFormula({word: 30, sentence: 2})), [
-    0,
-    4
-  ])
+  t.deepEqual(
+    daleChallGradeLevel(daleChallFormula({word: 30, sentence: 2})),
+    [0, 4]
+  )
   t.deepEqual(
     daleChallGradeLevel(
       daleChallFormula({word: 30, sentence: 2, difficultWord: 6})
