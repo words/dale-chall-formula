@@ -5,6 +5,7 @@ const percentage = 100
 const adjustment = 3.6365
 
 // Grade map associated with the scores.
+/** @type {Record<string, [number, number]>} */
 const gradeMap = {
   4: [0, 4],
   5: [5, 6],
@@ -61,7 +62,6 @@ export function daleChallGradeLevel(score) {
     floored = 10
   }
 
-  // eslint-ignore-next-line capitalized-comments
-  // type-coverage:ignore-next-line
+  // @ts-expect-error: fine.
   return gradeMap[floored].concat()
 }
